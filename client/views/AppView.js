@@ -3,6 +3,7 @@ var AppView = Backbone.View.extend({
   className: "player",
 
   initialize: function(params){
+    //sets up connections between files and attributes
     this.playerView = new PlayerView({model: this.model.get('currentSong')});
     this.libraryView = new LibraryView({collection: this.model.get('library')});
     this.songQueueView = new SongQueueView({collection: this.model.get('songQueue')});
@@ -16,6 +17,7 @@ var AppView = Backbone.View.extend({
     }, this);
   },
 
+  //sets up basic framework for page
   render: function(){
     return this.$el.html([
       this.playerView.$el,

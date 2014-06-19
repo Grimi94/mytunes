@@ -17,6 +17,7 @@ var PlayerView = Backbone.View.extend({
     return this.$el.attr('src', this.model ? this.model.get('url') : '');
   },
 
+  //when song ends, fires events to increment play count and dequeue song
   events: {
     'ended': function() {
       this.model.incrementPlays();

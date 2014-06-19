@@ -1,5 +1,6 @@
 // SongQueueEntryView.js - Defines a backbone view class for the song queue entries.
 var CurrentlyPlayingView = Backbone.View.extend({
+  //shows which song is currently being played
 
   tagName: 'tr',
 
