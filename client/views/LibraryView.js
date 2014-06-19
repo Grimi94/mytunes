@@ -4,6 +4,10 @@ var LibraryView = Backbone.View.extend({
   tagName: "table",
 
   initialize: function() {
+    this.collection.on('change:plays', function(){
+      console.log('play changed ');
+      this.render();
+    }, this);
     this.render();
   },
 
