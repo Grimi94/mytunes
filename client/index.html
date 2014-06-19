@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+</head>
   <body>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
@@ -20,6 +23,7 @@
     <script src="views/AppView.js"></script>
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
+    <script src="views/CurrentlyPlayingView.js"></script>
 
 
     <script>
@@ -35,5 +39,31 @@
         $('body').append(appView.render());
       });
     </script>
+    <style>
+    body {
+        margin: 0;
+        background: #8ad9aa;
+    }
+    .player {
+        background: #41bc72;
+        font-family: 'Lato';
+        font-size: 18px;
+        color: #b0e6c5;
+        margin: 0;
+    }
+
+    .queue, .current, .lib, audio {
+        background: #35955b;
+        width: 100%;
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    </style>
+
   </body>
 </html>
