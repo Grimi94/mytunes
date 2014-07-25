@@ -3,8 +3,15 @@ var LibraryView = Backbone.View.extend({
 
   tagName: "table",
 
+  //set up listener to refresh play count
   initialize: function() {
+    // Renders the Library view when the page is loaded
     this.render();
+
+    // Library view gets re-rendered when number of plays from a song is increased
+    this.collection.on('change:plays', function(){
+      this.render();
+    }, this);
   },
 
   render: function(){
@@ -12,7 +19,7 @@ var LibraryView = Backbone.View.extend({
     // see http://api.jquery.com/detach/
     this.$el.children().detach();
 
-    this.$el.html('<th>Library</th>').append(
+    this.$el.html('').append(
       this.collection.map(function(song){
         return new LibraryEntryView({model: song}).render();
       })
